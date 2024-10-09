@@ -10,7 +10,7 @@
 
     <h1>Piesakies webināram!</h1>
     
-    <form>
+    <form action="/confirmation.php" method="POST">
         <label for="name">Vārds:</label>
         <input type="text" name="name" id="name"><br>
 
@@ -36,11 +36,18 @@
     </form>
 
     <?php
+        $ary = [1,2,3]; // parasts indeksēts masīvs
+        $person = [
+            "name" => "Janis",
+            "email" => "somemail@renars.lv",
+            "level" => "Beginner"
+        ]; // asociatīvs masīvs jeb "hash map"
+
         $names =[
             ["name" => "Janis", "email" => "somemail@renars.lv", "level" => "Beginner"],
             ["name" => "Antra", "email" => "somemail@antra.lv", "level" => "Intermediate"],
-            ["name" => "John", "email" => "somemail@john.lv", "level" => "Advanced"],
-        ];
+            ["name" => "John", "email" => "somemail@john.lv", "level" => "Advanced", "some_info" => [1,2,3]],
+        ]; // daudzdimensionāls masīvs
 
         foreach($names as $name){
             echo "Vārds: "
